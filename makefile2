@@ -1,0 +1,23 @@
+#makefile begin
+
+CFLAGS = -g -Wall -O2 -lm
+CC = gcc
+hello:hello.o
+#.c.o
+
+all:
+	@echo you have typed command "make all"
+clean:
+	@echo youhave typed command "make clean"
+install:
+	@echo youhave typed command "make $@"
+doall:
+	@echo you have typed command "make $@"
+
+	@echo you have typed command "make all"
+
+	@echo youhave typed command "make clean"
+
+	@echo youhave typed command "make install"
+
+#makefile end
