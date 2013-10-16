@@ -3,6 +3,7 @@
 CFLAGS = -g -Wall -O2 -lm
 CC = gcc
 VPATH = ./LibTest1/
+TARGETEXE = hello
 
 hello:hello.o buildlib
 	cc -o hello hello.o
@@ -11,7 +12,7 @@ hello.o:
 
 buildlib:
 	@echo buildlib start
-	cd LibTest1 && $(MAKE) clean && $(MAKE)
+	cd LibTest1 && $(MAKE) clean && $(MAKE) && cd ..
 all:
 	@echo you have typed command "make all"
 clean:
@@ -19,8 +20,9 @@ clean:
 	-rm *.o
 	-rm *~
 	-rm -r  *.dSYM
+	-rm -r $(TARGETEXE)
 #clean sub lib
-	-cd LibTest1 && $(MAKE) clean	
+	-cd LibTest1 && $(MAKE) clean && cd ..	
 	@echo make clean done
 install:
 	@echo youhave typed command "make $@"
